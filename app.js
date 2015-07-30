@@ -10,7 +10,12 @@ var users = require('./routes/users');
 
 //var ejs = require('ejs'); //adding ejs ll
 
+
+
+
 var app = express();
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -26,10 +31,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+
 app.use('/', routes);
 app.use('/users', users);
 
-
+var maps_router = require('./routes/maps'); //maps module
+app.use('/m',maps_router);  //
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

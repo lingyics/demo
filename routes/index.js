@@ -38,4 +38,11 @@ router.get('/home',function(req,res,next){
   res.render('home',{title: 'Home Page', user:user});
 });
 
+/*
+router.get('/users', function(req, res, next) {
+
+    res.send('I am star cat');
+});
+
+*/
 module.exports = router;
