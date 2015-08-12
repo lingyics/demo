@@ -17,6 +17,9 @@ var app = express();
 
 
 
+
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -43,6 +46,13 @@ app.use('/m',maps_router);  //
 var starcat_router = require('./routes/starcat');
 app.use('/starcat',starcat_router);
 
+//adding a chatroom/private chatroom
+var chat_router = require('./routes/chat');
+app.use('/chat', chat_router);
+
+//ll: intialize a new socket.io
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -50,6 +60,8 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
+
+
 
 // error handlers
 
