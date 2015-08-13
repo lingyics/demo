@@ -50,8 +50,9 @@ app.use('/starcat',starcat_router);
 var chat_router = require('./routes/chat');
 app.use('/chat', chat_router);
 
-//ll: intialize a new socket.io
-
+//adding for crud
+var crud_router = require('./routes/crud');
+app.use('/crud',crud_router);
 
 
 // catch 404 and forward to error handler
