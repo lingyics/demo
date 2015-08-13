@@ -21,5 +21,5 @@ the original table is:
 
 crud._select(connection, "select * from t_user");
 crud._update(connection, 'update t_user set name="testUPDATE" where user_id =4');
-
+crud._insert(connection,'insert into t_user VALUES("6","insertUser","insert@hotmail.com","9999")');
 

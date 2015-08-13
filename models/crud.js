@@ -3,8 +3,8 @@
  */
 var CRUD = {
     //insert
-    _insert: function (client, insertSQLString, value) {
-        client.query(insertSQLString, value, function (error, results) {
+    _insert: function (client, insertSQLString) {
+        client.query(insertSQLString, function (error, results) {
             if (error) {
                 console.log("ClientReady Error:" + error.message);
                 client.end();
@@ -34,6 +34,7 @@ var CRUD = {
                 }
                 console.log(resultSet);
             }
+            console.log(results);
         });
     },
     //update
@@ -46,6 +47,8 @@ var CRUD = {
             }
 
             console.log("Update success...");
+
+
         });
     },
     //delete
